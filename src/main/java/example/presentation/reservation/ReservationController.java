@@ -9,6 +9,7 @@ import example.application.service.ReservationService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -28,6 +29,11 @@ public class ReservationController {
     @GetMapping("reservations/{id}/")
     public Request findBy(@PathVariable("id") int id) {
         return reservationService.findBy(id);
+    }
+
+    @GetMapping("reservations/")
+    public List<Request> listAll() {
+        return reservationService.listAll();
     }
 
 }
