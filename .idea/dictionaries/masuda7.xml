@@ -2,6 +2,8 @@
   <dictionary name="masuda7">
     <words>
       <w>gradle</w>
+      <w>postgre</w>
+      <w>testdb</w>
     </words>
   </dictionary>
 </component>

@@ -1,2 +1,4 @@
 rootProject.name = 'api-sample-2018'
+enableFeaturePreview('IMPROVED_POM_SUPPORT')
+
 
