@@ -8,8 +8,8 @@ CREATE TABLE reservation.requests (
   id  INTEGER PRIMARY KEY,
   remarks VARCHAR(100) NOT NULL,
 --   description TEXT NOT NULL,
---   date DATE NOT NULL,
---   time TIME NOT NULL,
+   date DATE NOT NULL,
+  start_time TIME NOT NULL,
   created_at TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 

@@ -7,6 +7,8 @@
   <resultMap id="request" type="example.domain.model.reservation.Request">
     <id property="id" column="id"/>
     <result property="remarks.value" column="remarks"/>
+    <result property="date" column="date"/>
+    <result property="startTime" column="start_time"/>
   </resultMap>
 
   <select id="requestNumber" resultType="int">
@@ -15,17 +17,23 @@
 
   <select id="findBy" resultMap="request">
     SELECT
-           id,
-           remarks
+     id,
+     remarks,
+     date,
+     start_time
     FROM reservation.requests
     WHERE id = #{id}
   </select>
 
   <insert id="register">
     INSERT INTO reservation.requests
-        (id, remarks)
+        (id, remarks, date, start_time)
     VALUES
-        (#{request.id}, #{request.remarks.value})
+    (
+       #{request.id}, #{request.remarks.value},
+       #{request.date},
+       #{request.startTime}
+    )
     ;
   </insert>
 </mapper>
