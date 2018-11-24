@@ -1,0 +1,17 @@
+# For idea
+**/out
+.idea
+*.iml
+*.ipr
+*.iws
+
+# For Gradle
+**/build
+build/**
+.gradle
+
+# For local
+temp
+
+# log files
+*.log
