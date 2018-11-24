@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="example.infrastructure.datasource.reservation.RequestMapper">
+
+  <resultMap id="request" type="example.domain.model.reservation.Request">
+    <id property="id" column="id"/>
+    <result property="remarks.value" column="remarks"/>
+  </resultMap>
+
+  <select id="requestNumber" resultType="int">
+    SELECT NEXTVAL('reservation.request_number');
+  </select>
+
+  <select id="findBy" resultMap="request">
+    SELECT
+           id,
+           remarks
+    FROM reservation.requests
+    WHERE id = #{id}
+  </select>
+
+  <insert id="register">
+    INSERT INTO reservation.requests
+        (id, remarks)
+    VALUES
+        (#{request.id}, #{request.remarks.value})
+    ;
+  </insert>
+</mapper>
