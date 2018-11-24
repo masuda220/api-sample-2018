@@ -25,6 +25,16 @@
     WHERE id = #{id}
   </select>
 
+  <select id="listAll" resultMap="request">
+    SELECT
+           id,
+           remarks,
+           date,
+           start_time
+    FROM reservation.requests
+    ORDER BY date DESC
+  </select>
+
   <insert id="register">
     INSERT INTO reservation.requests
         (id, remarks, date, start_time)

@@ -7,6 +7,7 @@ import example.application.repository.reservation.ReservationRepository;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Repository
@@ -32,5 +33,10 @@ public class ReservationDatasource implements ReservationRepository {
     @Override
     public Request findBy(int id) {
         return requestMapper.findBy(id);
+    }
+
+    @Override
+    public List<Request> listAll() {
+        return requestMapper.listAll();
     }
 }

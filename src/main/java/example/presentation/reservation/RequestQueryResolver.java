@@ -21,9 +21,7 @@ public class RequestQueryResolver implements GraphQLQueryResolver {
     }
 
     public List<Request> requests() {
-        List<Request> result = new ArrayList<>();
-        result.add(reservationService.findBy(0));
-        return result;
+        return reservationService.listAll();
     }
 
     public Request request(int id) {
