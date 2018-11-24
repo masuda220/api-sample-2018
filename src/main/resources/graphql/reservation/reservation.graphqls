@@ -1,0 +1,15 @@
+scalar Date
+scalar Time
+
+# reservation
+type Request {
+  id: Int!
+  date:Date!
+  startTime:Time!
+}
+
+# root query
+type Query {
+    request(id: Int) : Request!
+    requests: [Request]!
+}
