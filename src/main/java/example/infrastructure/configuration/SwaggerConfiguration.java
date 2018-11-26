@@ -3,6 +3,8 @@ package example.infrastructure.configuration;
 import com.google.common.base.Predicate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -17,6 +19,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
 @EnableSwagger2
+@Import(BeanValidatorPluginsConfiguration.class)
 public class SwaggerConfiguration {
     @Bean
     public Docket newsApi() {

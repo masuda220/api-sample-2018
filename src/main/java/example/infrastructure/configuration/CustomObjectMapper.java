@@ -17,6 +17,7 @@ public class CustomObjectMapper {
         .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
         .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)
         .setVisibility(PropertyAccessor.SETTER, JsonAutoDetect.Visibility.NONE)
+        .setVisibility(PropertyAccessor.CREATOR, JsonAutoDetect.Visibility.ANY)
 
         ;
     }
